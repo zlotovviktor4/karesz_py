@@ -1,4 +1,4 @@
-from karesz import *
+from game import *
 
 #Ablak létrehozása
 width= 640
