@@ -1,5 +1,5 @@
-from game import *
-from labirinth import *
+from src.game import *
+from src.labirinth import *
 class Karesz:
     def __init__(self,screen:Screen,labirinth:Labirinth):
         posX=0

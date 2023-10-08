@@ -1,4 +1,4 @@
-from karesz import *
+from src.karesz import *
 
 #Ablak létrehozása
 width= 640

@@ -1,5 +1,5 @@
 import pygame
-from labirinth import Labirinth
+from src.labirinth import Labirinth
 #Inicializáljuk a pygame könyvtárat hogy tudjuk használni a későbbiekben
 class Screen:
     def __init__(self,screen) -> None:
