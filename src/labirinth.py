@@ -13,4 +13,4 @@ class Labirinth:
             print(i)
     def getTable(self):
         return self.table
-        
+

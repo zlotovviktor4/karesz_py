@@ -1,5 +1,5 @@
 from src.game import *
-from src.labirinth import *
+from src.labirinth import Labirinth
 class Karesz:
     def __init__(self,screen:Screen,labirinth:Labirinth):
         posX=0
@@ -17,4 +17,6 @@ class Karesz:
         return self.picture
     def getPos(self):
         return (self.posX,self.posY)
+
+
     
