@@ -4,7 +4,7 @@ class Karesz:
     def __init__(self,screen:Screen,labirinth:Labirinth):
         posX=0
         self.posX=0
-        self.posY=40
+        self.posY=1
         self.screen=screen
         self.screen.setKaresz(self)
         self.labirinth=labirinth
@@ -16,7 +16,11 @@ class Karesz:
     def getPicture(self):
         return self.picture
     def getPos(self):
-        return (self.posX,self.posY)
+        return [self.posX*40,self.posY*40]
+    def move(self,x:int, y:int):
+        self.posX+=x
+        self.posY+=y
+    
 
 
     
