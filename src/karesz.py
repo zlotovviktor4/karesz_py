@@ -17,12 +17,14 @@ class Karesz:
         self.picture = pygame.image.load(path)
     def getPicture(self):
         return pygame.transform.rotate(self.picture,90*self.dir)
-    def getPos(self,blockSize:int):
+    def getPos(self,blockSize:int) -> list:
         return [self.posX*blockSize,self.posY*blockSize]
     def setPosition(self,x:int, y:int):
         self.posX=x
         self.posY=y
     def move(self):
+        if self.isThereWallInFrontOfMe():
+            return None
         pos=self.getPosInFrontOfMe()
         self.setPosition(pos[0],pos[1])
             
@@ -50,6 +52,12 @@ class Karesz:
         elif(self.dir==3):
             frontPos[1]+=1
         return frontPos
+    def isThatFinish(self) ->bool:
+        pos=self.getPos(1)
+        table=self.labirinth.getTable()
+        if(table[pos[1]][pos[0]]=="F"):
+            return True
+        return False
     
     
     

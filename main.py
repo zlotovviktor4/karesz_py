@@ -6,15 +6,22 @@ height=480
 screen = pygame.display.set_mode((width, height))
 lab=Labirinth("file.txt")
 
+
 window=Screen(screen)
 karesz = Karesz(window,lab)
 karesz.setPicture("img\\karesz.png")
-karesz.draw()
-karesz.move()
-for i in range(4):
-    karesz.turn("R")
-print(karesz.isThereWallInFrontOfMe())
-print(karesz.getPosInFrontOfMe())
-window.display()
-window.game()
+
+
+def move():
+    karesz.move()
+    window.display()
+def turn(dir:str):
+    karesz.turn(dir)
+    window.display()
+while not karesz.isThatFinish():
+    turn("R")
+    while karesz.isThereWallInFrontOfMe():
+        turn("L")
+    move()
+    
 karesz.labirinth.print()
