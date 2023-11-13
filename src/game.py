@@ -1,4 +1,5 @@
 import pygame
+import time
 from src.labirinth import Labirinth
 #Inicializáljuk a pygame könyvtárat hogy tudjuk használni a későbbiekben
 class Screen:
@@ -10,8 +11,6 @@ class Screen:
         self.table=lab.getTable()
     def setKaresz(self,karesz):
         self.karesz=karesz
-    def setPicture(self):
-        self.picture=self.karesz.getPicture()
 
     def draw(self):
         pygame.init()
@@ -23,8 +22,11 @@ class Screen:
                     pygame.draw.rect(self.screen, [255,0,0], pygame.Rect(j*40, i*40, 40, 40))
                 elif self.table[i][j]=="F":
                     pygame.draw.rect(self.screen, [0,0,255], pygame.Rect(j*40, i*40, 40, 40))
-        self.screen.blit(self.picture,self.karesz.getPos())
-
+        self.screen.blit(self.karesz.getPicture(),self.karesz.getPos(40))
+    def display(self):
+        self.draw()
+        pygame.display.flip()
+        time.sleep(1)
     def game(self):
         pygame.init()
         fps=60
