@@ -26,7 +26,7 @@ class Screen:
     def display(self):
         self.draw()
         pygame.display.flip()
-        time.sleep(1)
+        time.sleep(0.3)
     def game(self):
         pygame.init()
         fps=60
