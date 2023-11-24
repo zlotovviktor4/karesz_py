@@ -58,7 +58,9 @@ class Karesz:
         if(table[pos[1]][pos[0]]=="F"):
             return True
         return False
-    
+kjshdfgkjhsdgkjjshfkjhsfl
+
+sdjfhusdjf
     
     
 
